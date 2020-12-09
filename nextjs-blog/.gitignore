@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+../node_modules/
 /.pnp
 .pnp.js
 
@@ -11,12 +12,15 @@
 # next.js
 /.next/
 /out/
+src/.next/
 
 # production
 /build
 
 # misc
 .DS_Store
+../.DS_Store
+.idea/
 
 # debug
 npm-debug.log*
@@ -29,4 +33,6 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-...DS_Store
+# parent
+../package-lock.json
+	../package.json

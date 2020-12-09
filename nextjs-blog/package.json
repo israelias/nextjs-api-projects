@@ -5,11 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next build && next export"
   },
   "dependencies": {
-    "next": "^10.0.0",
+    "axios": "^0.21.0",
+    "date-fns": "^2.16.1",
+    "fs": "^0.0.1-security",
+    "gray-matter": "^4.0.2",
+    "next": "^10.0.3",
+    "next-images": "^1.6.2",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1"
   }
 }

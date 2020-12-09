@@ -50,3 +50,17 @@
 .lightText {
     color: #999;
 }
+
+.clearFix {
+    clear: both;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.centerForm {
+    padding-top: 10px;
+    margin: 0 auto;
+    max-width: 70%;
+}
