@@ -4,6 +4,7 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import React from 'react'
 import profileImage from 'next-images'
+import Navbar from "./navbar";
 
 const name = 'Joem Elias Sanez'
 export const siteTitle = 'Next.js Sample Website'
@@ -30,7 +31,7 @@ const Layout = ({ children, home }) => {
                 {home ? (
                     <>
                         <img
-                            src={profileImage}
+                            src="/img/profile.jpg"
                             className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
                             alt={name}
                         />
@@ -41,7 +42,7 @@ const Layout = ({ children, home }) => {
                         <Link href="/">
                             <a>
                                 <img
-                                    src="/public/images/profile.jpg"
+                                    src="/img/profile.jpg"
                                     className={`${styles.headerImage} ${utilStyles.borderCircle}`}
                                     alt={name}
                                 />

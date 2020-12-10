@@ -6,11 +6,39 @@ import {getSortedPostsData} from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import {fetchGitHubInformation, gitHubUserData, gitHubRepoData, gitDefaultValue} from "../components/github";
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import axios from 'axios'
 import styles from "../components/github.module.css";
 
+import Search from "../components/search";
+import {searchRepos} from '../services/githubService'
+
 const Home = ({ allPostsData, profileData, repoData }) => {
+
+    const [searchText, setSearchText] = useState('')
+    const [language, setLanguage] = useState('')
+    const [repos, setRepos] = useState([])
+    const [loading, setLoading] = useState(false);
+
+    // receives text and sets seerach text, loads repos
+    const onSearchTextChange = (text) => {
+        // has to calculate the argument text, not the search text function til load repos below
+        setSearchText(text);
+        loadRepos(text, language);
+    };
+
+    const onLanguageChange = (language) => {
+        // will take the closest language from the function arguments
+        setLanguage(language);
+        loadRepos(searchText, language);
+    };
+
+    const loadRepos = async (searchText, language) => {
+        setLoading(true);
+        const res = await searchRepos(searchText, language);
+        setLoading(false);
+        setRepos(res.data.items);
+    }
 
     return (
         <Layout home>
@@ -99,6 +127,15 @@ const Home = ({ allPostsData, profileData, repoData }) => {
                             {/*</li>*/}
                             {/*))}*/}
                         </ul>
+                    </div>
+                    <div>
+                        <Search
+                            searchText={searchText}
+                            language={language}
+                            onSearchTextChange={onSearchTextChange}
+                            onLanguageChange={onLanguageChange}
+                        />
+                        {loading ? 'Loading...' : <div>{JSON.stringify(repos, null, 2)}</div>}
                     </div>
 
                 </div>
