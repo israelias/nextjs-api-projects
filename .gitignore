@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-../node_modules/
 /.pnp
 .pnp.js
 
@@ -19,7 +18,6 @@ src/.next/
 
 # misc
 .DS_Store
-../.DS_Store
 .idea/
 
 # debug
@@ -33,6 +31,3 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# parent
-../package-lock.json
-	../package.json

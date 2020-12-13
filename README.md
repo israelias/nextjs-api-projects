@@ -1,2 +1,1 @@
-# next-template
-next.js directory starter
+This is a starter template for [Learn Next.js](https://nextjs.org/learn).
