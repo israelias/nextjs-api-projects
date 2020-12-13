@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This project extends the starter template from [Learn Next.js](https://nextjs.org/learn) to develop mini API projects that utilize the React framework's smart bundling, route pre-fetching to generate pages and content using hybrid static and server rendering. Upon developing a shorthand with JS and React, this directory has evolved to be a sketch directory for data-centric and interactive development.
